@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "./Image";
 import { Link } from "react-router-dom";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 
 const Navbar = () => {
   const [open, setopen] = useState(false);
@@ -26,18 +26,10 @@ const Navbar = () => {
             open ? "-right-0" : "-right-[100%]"
           }`}
         >
-          <Link to="/">
-            Home
-          </Link>
-          <Link to="/">
-            Trending
-          </Link>
-          <Link to="/">
-            Most Populer
-          </Link>
-          <Link to="/">
-            About
-          </Link>
+          <Link to="/">Home</Link>
+          <Link to="/">Trending</Link>
+          <Link to="/">Most Populer</Link>
+          <Link to="/">About</Link>
           <Link to="/">
             <button className="py-2 px-4 rounded-3xl bg-blue-700 text-white">
               Login 🎈
@@ -47,29 +39,21 @@ const Navbar = () => {
       </div>
       {/* DESKTOP MENU */}
       <div className="hidden md:flex items-center gap-8 xl:gap-12 font-medium">
-        <Link to="/">
-          Home
-        </Link>
-        <Link to="/">
-          Trending
-        </Link>
-        <Link to="/">
-          Most Populer
-        </Link>
-        <Link to="/">
-          About
-        </Link>
-        
+        <Link to="/">Home</Link>
+        <Link to="/">Trending</Link>
+        <Link to="/">Most Populer</Link>
+        <Link to="/">About</Link>
+
         <SignedOut>
-        <Link to="/login">
-          <button className="py-2 px-4 rounded-3xl bg-blue-700 text-white">
-            Login 🎈
-          </button>
-        </Link>
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
+          <Link to="/login">
+            <button className="py-2 px-4 rounded-3xl bg-blue-700 text-white">
+              Login 🎈
+            </button>
+          </Link>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
       {/* END */}
     </div>
